@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/css/uikit.min.css" />
+    
+    <!-- jQuery is required -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/js/uikit-icons.min.js"></script>
+  </head>
+
+  <body>
+    <div id="vueapp">
+      <h1>JSON Pretty Print</h1>
+
+      <div class="uk-margin">
+        <label>Input:<textarea v-model="jsonstr" class="uk-textarea"></textarea></label>
+      </div>
+
+      <div class="uk-margin">
+          <label>Result:<pre>{{ jsonstr | pretty }}</pre></label>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.2.4/dist/vue.js"></script>
+    <script>
+      'use strict';
+
+      new Vue({
+        el: '#vueapp',
+        data: {
+          jsonstr: '{"fruits":[{"name":"apple","price":100},{"name":"banana","price":200}]}'
+        },
+        filters: {
+          pretty: function(value) {
+            return JSON.stringify(JSON.parse(value), null, 2);
+          }
+        }
+      })
+    </script>
+  </body>
+
+</html>
