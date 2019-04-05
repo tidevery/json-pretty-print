@@ -4,8 +4,8 @@
   "theme_color": "#574f76",
   "background_color": "#574f76",
   "display": "standalone",
-  "Scope": "/",
-  "start_url": "/",
+  "Scope": "/json-pretty-print",
+  "start_url": "/json-pretty-print",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
